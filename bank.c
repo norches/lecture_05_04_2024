@@ -10,8 +10,6 @@ void deposit(Account *account, double amount) { account->balance += amount; }
 void withdraw(Account *account, double amount) {
     if (account->balance >= amount) {
         account->balance -= amount;
-    } else {
-        printf("Insufficient funds\n");
     }
 }
 
@@ -22,9 +20,10 @@ int main() {
     Account user2 = {654321, 2000.0};
 
     // transactions
-    deposit(&user1, 500.0);
-    withdraw(&user1, 2000.0);  // attempting to withdraw more than we have in balance
     withdraw(&user2, 1500.0);
+
+    deposit(&user1, 500.0);
+    withdraw(&user1, 2000.0);
 
     // display balance
     printf("User 1 balance: %.2f\n", get_balance(&user1));
