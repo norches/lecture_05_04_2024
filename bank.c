@@ -16,8 +16,8 @@ void withdraw(Account *account, double amount) {
 double get_balance(Account *account) { return account->balance; }
 
 int main() {
-    Account user1 = {123456, 1000.0};
-    Account user2 = {654321, 2000.0};
+    Account user1 = {123456, 1000.0};  // 1000 + 500 - 2000 = -500
+    Account user2 = {654321, 2000.0};  // 2000 - 1500 = 500
 
     // transactions
     withdraw(&user2, 1500.0);
@@ -31,3 +31,13 @@ int main() {
 
     return 0;
 }
+
+/*Ожидаем
+User 1 balance: -500.00
+User 2 balance: 500.00
+*/
+
+/* Получаем
+User 1 balance: 1500.00
+User 2 balance: 500.00
+*/

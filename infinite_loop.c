@@ -1,10 +1,24 @@
 #include <stdio.h>
 
 int main() {
-    int i = 0;
-    while (i >= 0) {
-        i++;  // incrementing i indefinitely
+    int arr[7] = {1, 2, 3, 4, 5, 6, 7};
+
+    for (size_t i = 0; i < sizeof(arr) / 4; i++) {
+        int is_odd = 0;
+        if (arr[i] % 2 != 0) {
+            is_odd = 1;
+        }
+        printf("Нечётное число: #%zu %s\n", i + 1, is_odd ? "Да" : "Нет");
     }
     printf("Reached here!\n");
     return 0;
 }
+/**
+    Нечётное число: #1 Да
+    Нечётное число: #2 Нет
+    Нечётное число: #3 Да
+    Нечётное число: #4 Нет
+    Нечётное число: #5 Нет
+    Нечётное число: #6 Нет
+    Нечётное число: #7 Нет
+*/
